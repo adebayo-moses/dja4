@@ -1,2 +1,42 @@
 // place global css variables here
 // background-color: #171717;
+
+:root {
+    /* --color-pink: #d88c9a; */
+    --color-dark: #170101;
+    --bg-color: #e0e5ec;
+    --hover-color: #ebeff6;
+    --light-shadow: rgba(255, 255, 255, 0.6);
+    --dark-shadow: #a3b1c6;
+    --default-padding: clamp(1rem, 2vw, 3rem);
+    --default-shadow: 9px 9px 16px 0px var(--dark-shadow),
+        -9px -9px 16px 0px var(--light-shadow);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+/* LOADING OVERLAY */
+.loading-overlay {
+    --percentage: '0%';
+    background: var(--color-dark);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 11;
+}
+
+.loading-overlay::before {
+    content: var(--percentage);
+
+    position: absolute;
+    right: var(--default-padding);
+    bottom: var(--default-padding);
+    color: var(--bg-color);
+    font-size: clamp(3rem, 8vw, 12rem);
+}

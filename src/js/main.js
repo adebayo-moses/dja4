@@ -1,4 +1,28 @@
+import { gsap } from 'gsap';
 console.log('Hello Crack Head');
+
+// loading animation
+
+const loadingOverlay = document.querySelector('.loading-overlay');
+
+if (loadingOverlay) {
+    const tl = gsap
+        .timeline()
+        .to(loadingOverlay, {
+            '--percentage': "'loading.... 100%'",
+            roundProps: 1,
+            duration: 3,
+        })
+        .to(loadingOverlay, {
+            clipPath: 'inset(0 0 100% 0)',
+            pointerEvents: 'none',
+            duration: 0.9,
+        })
+        .from('.page-header h1', {
+            opacity: 0,
+            y: 100,
+        });
+}
 
 $('a[href*="#"]')
     // Remove links that don't actually link to anything
